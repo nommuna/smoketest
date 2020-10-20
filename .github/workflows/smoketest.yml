@@ -11,3 +11,4 @@ jobs:
         name: nommuna/smoketest
         username: ${{ github.actor }}
         password: ${{ secrets.GH_TOKEN }}
+        registry: ghcr.io/nommuna/smoketest
