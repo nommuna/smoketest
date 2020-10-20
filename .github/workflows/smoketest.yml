@@ -1,0 +1,14 @@
+name: Publish Smoketest
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: myDocker/repository
+        username: ${{ github.actor }}
+        password: ${{ secrets.GH_TOKEN }}
+        registry: ghcr.io
