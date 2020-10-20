@@ -12,5 +12,5 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GH_TOKEN }}
         registry: ghcr.io
-    - uses: ./.github/workflows/actions/runSmokeTest.yml
-    - name: Run smoke test
+    - name: Pull image from github packages
+      run: docker pull docker://ghcr.io/nommuna/smoketest:latest 
