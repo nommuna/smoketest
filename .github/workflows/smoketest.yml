@@ -12,5 +12,3 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GH_TOKEN }}
         registry: ghcr.io
-    - name: Pull image from github packages
-      run: docker pull docker://ghcr.io/nommuna/smoketest:latest 

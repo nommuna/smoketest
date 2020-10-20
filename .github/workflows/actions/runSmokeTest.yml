@@ -1,10 +1,13 @@
-# action.yml
-name: 'Smoke Test Action'
-description: 'Action to run smoketest with a GH actions'
-runs:
-  using: docker
-  image: docker://ghcr.io/nommuna/smoketest:latest
-  args:
-    - smoke.spec.js
-    - something
-    - boss
+name: Test SmokeTest
+on: [workflow_dispatch]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Sign in to docker
+      run: echo ${{ secrets.GH_TOKEN }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin 
+    - name: Pull image from github packages
+      run: docker pull ghcr.io/nommuna/smoketest:latest
+    - name: run smoktest
+      run: docker run smoketest:latest smoke.spec.js something test
