@@ -1,0 +1,7 @@
+cypress
+node_modules
+.editorconfig
+smoke.spec.js
+lib
+smoketest-linux
+smoketest-macos
