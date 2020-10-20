@@ -10,4 +10,4 @@ jobs:
     - name: Pull image from github packages
       run: docker pull ghcr.io/nommuna/smoketest:latest
     - name: run smoktest
-      run: docker run smoketest:latest smoke.spec.js something test
+      run: docker run ghcr.io/nommuna/smoketest:latest smoke.spec.js something test
