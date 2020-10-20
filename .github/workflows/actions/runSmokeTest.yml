@@ -1,0 +1,10 @@
+# action.yml
+name: 'Smoke Test Action'
+description: 'Action to run smoketest with a GH actions'
+runs:
+  using: docker
+  image: docker://ghcr.io/nommuna/smoketest:latest
+  args:
+    - smoke.spec.js
+    - something
+    - boss
